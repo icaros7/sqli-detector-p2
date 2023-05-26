@@ -1,6 +1,5 @@
 import argparse
 import os
-import sys
 import subprocess
 
 import final_a_href_crawl

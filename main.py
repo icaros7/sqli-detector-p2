@@ -56,8 +56,8 @@ if len(dir) == 0:
 # Scan specific tag and export to xlsx
 try:
     txtf = data_export.scan_txt(directory_path)
-    tags, dic = data_export.extract_tags_from_files(txtf)
-    data_export.save_tags_to_excel(tags, dic, tag_file_path)
+    tags, dic = data_export.extract_tags(txtf)
+    data_export.export_excel(tags, dic, tag_file_path)
 
 except Exception as e:
     print(f'Error: {e}')

@@ -3,7 +3,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 
 
-def extract_tags_from_files(txt_files):
+def extract_tags(txt_files):
     tags = set()
     dict = {}
 
@@ -19,7 +19,7 @@ def extract_tags_from_files(txt_files):
     return tags, dict
 
 
-def save_tags_to_excel(tags, dict, filename):
+def export_excel(tags, dict, filename):
     df_tags = pd.DataFrame({"Found Tag": list(tags)})
     df_ids = pd.DataFrame(dict.items(), columns=['Tag', 'ID'])
     df_combined = pd.concat([df_tags, df_ids], axis=1)

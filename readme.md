@@ -1,4 +1,7 @@
-# Selenium Crawling Project
+# SQL Injection Detection Project
+Based on [K-Shield Jr. 10th A-09 Project](https://github.com/ksj-10th-a09/selenium_crawl_p1).
+
+This project require [Python 3](https://www.python.org) 3.6 or later.
 
 ## Configuration
 - Supported Browser:
@@ -6,9 +9,10 @@
   - Google Chrome  
   - Mozilla Firefox  
 
-- Tested Python Version: `3.11`
+- Tested Python Version: `3.11`, `3.8`
 - Tested Edge Version: `112.0.1722.39`
 - Tested Chrome Version: `.`
+- Tested Firefox Version: `.`
 
 ## PIP modules
 - `selenium`
@@ -24,16 +28,6 @@
 ## Graphic User Interface
 [Selenium GUI Project](https://github.com/ksj-10th-a09/sqli-detection-gui)
 
-## About Team
-> K-Shield Jr. 10th A-09
-
-### Crew
-- **이호민** (Project Manager, Integration / GUI Dev)
-- **김태현** (Data Structured Dev)
-- **박지은** (Web Crawling Dev)
-- **이승훈** (SQL Injectable Test Dev)
-
 ## Reference
+- [K-Shield Jr. 10th A-09 Project](https://github.com/ksj-10th-a09/selenium_crawl_p1).
 - [www.selenium.dev/documentation/](https://www.selenium.dev/documentation/)
-- [greeksharifa.github.io/references/2020/10/30/python-selenium-usage/](https://greeksharifa.github.io/references/2020/10/30/python-selenium-usage)
-- [velog.io/@bolero2/python-crawling-using-selenium-package](https://velog.io/@bolero2/python-crawling-using-selenium-package)

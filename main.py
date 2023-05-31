@@ -2,8 +2,8 @@ import argparse
 import os
 import subprocess
 
-import final_a_href_crawl
-import structured_data_save
+import crawl
+import data_export
 
 from urllib.parse import urlparse
 
@@ -82,10 +82,10 @@ dir = os.listdir(directory_path)
 if len(dir) == 0:
     # Crawling All Page
     try:
-        a_tag = final_a_href_crawl.root_scan(url, driver)
-        href_list = final_a_href_crawl.recursive_scan(a_tag)
-        result = final_a_href_crawl.cleanup(href_list)
-        final_a_href_crawl.save_to_file(result, directory_path, driver)
+        a_tag = crawl.root_scan(url, driver)
+        href_list = crawl.recursive_scan(a_tag)
+        result = crawl.cleanup(href_list)
+        crawl.save_to_file(result, directory_path, driver)
 
     except FileNotFoundError:
         print('Error: File Not Found')
@@ -95,9 +95,9 @@ if len(dir) == 0:
 
 # Scan specific tag and export to xlsx
 try:
-    txtf = structured_data_save.scan_txt(directory_path)
-    tags, dict = structured_data_save.extract_tags_from_files(txtf)
-    structured_data_save.save_tags_to_excel(tags, dict, tag_file_path)
+    txtf = data_export.scan_txt(directory_path)
+    tags, dict = data_export.extract_tags_from_files(txtf)
+    data_export.save_tags_to_excel(tags, dict, tag_file_path)
 
 except Exception as e:
     print(f'Error: {e}')

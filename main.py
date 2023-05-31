@@ -13,6 +13,7 @@ parser.add_argument('-u', '--url', action='store', default='', help='Target site
 parser.add_argument('-b', '--browser', action='store', default='Edge', help='Select browser to use (Edge / Chrome / '
                                                                             'Firefox)')
 parser.add_argument('-t', '--thread', action='store', default='4', help='Number of Thread (1-10)')
+parser.add_argument('-n', '--new', action='store', default='False', help='Crawling new data anyways (True, False)')
 
 # Init var
 args = parser.parse_args()
@@ -20,9 +21,10 @@ url = args.url.rstrip("/")
 domain = urlparse(url).netloc
 browser = args.browser
 thread = args.thread
+new = args.new
 
 # Check args and dependency module validity
-init.args(thread)
+init.args(thread, browser, new)
 init.module()
 
 # Make dir with domain name
@@ -39,7 +41,7 @@ os.makedirs(directory_path, exist_ok=True)
 dir = os.listdir(directory_path)
 
 # Skip if has already crawling data
-if len(dir) == 0:
+if len(dir) == 0 or new == 'True':
     # Crawling All Page
     try:
         a_tag = crawl.root_scan(url, driver)
@@ -47,8 +49,8 @@ if len(dir) == 0:
         result = crawl.cleanup(href_list)
         crawl.save_to_file(result, directory_path, driver)
 
-    except FileNotFoundError:
-        print('Error: File Not Found')
+    except FileNotFoundError as e:
+        print(f'Error: File Not Found. {e}')
 
     except IOError as e:
         print(f'Error: {e}')

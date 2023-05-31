@@ -44,7 +44,7 @@ def module():
             break
 
 
-def args(thr):
+def args(thr, browser, new):
     # Check argument validity
     try:
         if int(thr) < 1 or int(thr) > 11:
@@ -53,4 +53,15 @@ def args(thr):
 
     except ValueError:
         print('Error: Thread option must be Int type, in range of 1,10')
+        exit()
+
+    support_bro = ['Edge', 'Chrome', 'Firefox']
+    boolean = ['True', 'False']
+
+    if browser not in support_bro:
+        print('Error: You have to select browser in support browser list')
+        exit()
+
+    if new not in boolean:
+        print('Error: You have to select True or False for crawling new data anyway')
         exit()

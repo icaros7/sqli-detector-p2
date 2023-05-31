@@ -8,10 +8,10 @@ import structured_data_save
 from urllib.parse import urlparse
 
 # Parameter parsing
-parser = argparse.ArgumentParser(description="K-Shield Jr. 10th Python Crawling Project")
-parser.add_argument('-u', '--url', action='store', default='', help='분석을 원하는 사이트 주소', required=True)
-parser.add_argument('-b', '--browser', action='store', default='Edge', help='사용할 브라우저 선택 (Edge / Chrome / Firefox)')
-parser.add_argument('-t', '--thread', action='store', default='4', help='Thread 수 (1-10)')
+parser = argparse.ArgumentParser(description="SQL Injection Detection Project v2")
+parser.add_argument('-u', '--url', action='store', default='', help='Target site url', required=True)
+parser.add_argument('-b', '--browser', action='store', default='Edge', help='Select browser to use (Edge / Chrome / Firefox)')
+parser.add_argument('-t', '--thread', action='store', default='4', help='Number of Thread (1-10)')
 
 # Init var
 args = parser.parse_args()

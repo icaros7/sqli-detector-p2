@@ -26,7 +26,7 @@ This project require [Python 3](https://www.python.org) 3.6 or later.
 - `.py`: SQL Injectable Test Part
 
 ## Graphic User Interface
-[Selenium GUI Project](https://github.com/ksj-10th-a09/sqli-detection-gui)
+[Selenium GUI Project](https://github.com/icaros7/sqli-detector-gui-p2)
 
 ## Reference
 - [K-Shield Jr. 10th A-09 Project](https://github.com/ksj-10th-a09/selenium_crawl_p1).
